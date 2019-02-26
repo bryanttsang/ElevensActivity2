@@ -59,7 +59,7 @@ public class Deck {
      * @return the number of undealt cards in this deck.
      */
     public int size() {
-		return cards.size();
+		return size;
     }
 
     /**
@@ -76,9 +76,12 @@ public class Deck {
      *         previously dealt.
      */
     public Card deal() {
-		int temp = size;
+        if (isEmpty())
+        {
+            return null;
+        }
 		size--;
-		return cards.get(temp);
+		return cards.get(size);
     }
 
     /**
